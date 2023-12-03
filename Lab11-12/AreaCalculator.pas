@@ -16,7 +16,7 @@ const circleLineXIntersection = 20.5685424949238;
 const formatA = ':0000.000';
 const formatB = ':000.0000';
 
-type CalculatingAreaFunction := function(
+type CalculatingAreaFunction = function(
     func : Func<Double, Double>,
     lowerBound, upperBound : Double, 
     iterations : Integer) : Double
