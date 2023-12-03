@@ -16,19 +16,24 @@ const circleLineXIntersection = 20.5685424949238;
 const formatA = ':0000.000';
 const formatB = ':000.0000';
 
+type CalculatingAreaFunction := function(
+    func : Func<Double, Double>,
+    lowerBound, upperBound : Double, 
+    iterations : Integer) : Double
+
 function CalculateAreaUnderCurveByRect(
     func : Func<Double, Double>;
     lowerBound, upperBound : Double;
     iterations : Integer)
     : Double;
 begin
-    var currentArea : real = 0;
-	for var i := 0 to iterations - 1 do begin
-        var functionValue := func((upperBound - lowerBound) / iterations * i + lowerBound);
-        currentArea := currentArea + (upperBound - lowerBound) / iterations * functionValue;
-	end;
+    var area : real = 0;
+    var dx := (upperBound - lowerBound) / iterations;
+    for var i := 0 to iterations - 1 do begin
+        area += dx * func(dx * i + lowerBound)
+    end;
 
-	Result := abs(currentArea);
+	Result := abs(area);
 end;
 
 function CalculateAreaUnderCurveByTrapezoid(
@@ -37,19 +42,21 @@ function CalculateAreaUnderCurveByTrapezoid(
     iterations : Integer)
     : Double;
 begin
-    var currentArea : real = 0;
+    var area : real = 0;
     var previouseValue := func(0);
     var dx := (upperBound - lowerBound) / iterations;
+
 	for var i := 1 to iterations - 2 do begin
-        currentArea += func(dx * i + lowerBound);
+        area += func(dx * i + lowerBound);
 	end;
 
-	Result := abs((currentArea + (func(lowerBound) + func(upperBound)) / 2) * dx);
+    area += (func(lowerBound) + func(upperBound)) / 2
+	Result := abs(area * dx);
 end;
 
 function GetAArea(
     iterations : Integer; 
-    GetAreaUnderCurve : System.Func<Func<Double, Double>, Double, Double, Integer, Double>) 
+    GetAreaUnderCurve : CalculatingAreaFunction) 
     : Double;
 begin
     var aArea := GetAreaUnderCurve(
@@ -74,10 +81,14 @@ end;
 
 function GetBArea(
     iterations : Integer; 
-    getAreaUnderCurve : System.Func<Func<Double, Double>, Double, Double, Integer, Double>) 
+    getAreaUnderCurve : CalculatingAreaFunction)
     : Double;
 begin
-    var bArea := getAreaUnderCurve(x -> k * x + c, circleX, 2, iterations);
+    var bArea := getAreaUnderCurve(
+        x -> k * x + c,
+        circleX, 2,
+        iterations);
+
     bArea += getAreaUnderCurve(
         x -> ellipseY - a / b * sqrt(b**2 - (x - ellipseX)**2), 
         circleEllipseIntersectionX2, 
