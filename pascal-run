@@ -1,0 +1,4 @@
+#!/bin/bash
+pascal-build $1 1> /dev/null
+filename=$(basename $1)
+mono bin/${filename%.*}.exe ${@:2}

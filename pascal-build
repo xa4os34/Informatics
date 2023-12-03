@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if ! [ -d bin/ ]; then
+    mkdir bin/
+fi
+
+echo -e "OutDir=bin/\n$@\n" | mono /opt/pascal/pabcnetc.exe
+echo
