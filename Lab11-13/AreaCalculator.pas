@@ -16,10 +16,10 @@ const circleLineXIntersection = 20.5685424949238;
 const formatA = ':0000.000';
 const formatB = ':000.0000';
 
-type CalculatingAreaFunction := function(
-    func : Func<Double, Double>,
-    lowerBound, upperBound : Double, 
-    iterations : Integer) : Double
+type CalculatingAreaFunction = function(
+    func : Func<Double, Double>;
+    lowerBound, upperBound : Double; 
+    iterations : Integer) : Double;
 
 function CalculateAreaUnderCurveByRect(
     func : Func<Double, Double>;
@@ -50,8 +50,8 @@ begin
         area += func(dx * i + lowerBound);
 	end;
 
-    area += (func(lowerBound) + func(upperBound)) / 2
-	Result := abs(area * dx);
+    area += (func(lowerBound) + func(upperBound)) / 2;
+    Result := abs(area * dx);
 end;
 
 function GetAArea(
