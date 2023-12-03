@@ -22,9 +22,9 @@ function CalculateAreaUnderCurveByRect(
     iterations : Integer)
     : Double;
 begin
-	var currentArea : real = 0;
+    var currentArea : real = 0;
 	for var i := 0 to iterations - 1 do begin
-		var functionValue := func((upperBound - lowerBound) / iterations * i + lowerBound);
+        var functionValue := func((upperBound - lowerBound) / iterations * i + lowerBound);
         currentArea := currentArea + (upperBound - lowerBound) / iterations * functionValue;
 	end;
 
@@ -37,7 +37,7 @@ function CalculateAreaUnderCurveByTrapezoid(
     iterations : Integer)
     : Double;
 begin
-	var currentArea : real = 0;
+    var currentArea : real = 0;
     var previouseValue := func(0);
     var dx := (upperBound - lowerBound) / iterations;
 	for var i := 1 to iterations - 2 do begin
