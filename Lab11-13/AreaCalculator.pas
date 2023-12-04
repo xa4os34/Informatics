@@ -33,7 +33,7 @@ begin
         area += dx * func(dx * i + lowerBound)
     end;
 
-	Result := abs(area);
+    Result := abs(area);
 end;
 
 function CalculateAreaUnderCurveByTrapezoid(
@@ -46,9 +46,9 @@ begin
     var previouseValue := func(0);
     var dx := (upperBound - lowerBound) / iterations;
 
-	for var i := 1 to iterations - 2 do begin
+    for var i := 1 to iterations - 2 do begin
         area += func(dx * i + lowerBound);
-	end;
+    end;
 
     area += (func(lowerBound) + func(upperBound)) / 2;
     Result := abs(area * dx);
@@ -109,9 +109,9 @@ begin
 
     tableBuilder
         .AppendLine('┏━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━┓')
-    	.AppendLine('┃  Itera-  ┃        Area A       ┃        Area B       ┃')
-    	.AppendLine('┃  tions   ┣━━━━━━━━━━┳━━━━━━━━━━╋━━━━━━━━━━┳━━━━━━━━━━┫')
-    	.AppendLine('┃          ┃Rectangle ┃Trapezoid ┃Rectangle ┃Trapezoid ┃');
+        .AppendLine('┃  Itera-  ┃        Area A       ┃        Area B       ┃')
+        .AppendLine('┃  tions   ┣━━━━━━━━━━┳━━━━━━━━━━╋━━━━━━━━━━┳━━━━━━━━━━┫')
+        .AppendLine('┃          ┃Rectangle ┃Trapezoid ┃Rectangle ┃Trapezoid ┃');
     
     for var i := 1 to ParamCount do begin
         var iterations : Integer;
