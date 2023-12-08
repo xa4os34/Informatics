@@ -56,13 +56,13 @@ begin
     writeln('┃   of   ┣━━━━━━━━━┳━━━━━━━━━╋━━━━━━━━━┳━━━━━━━━━┫');
     writeln('┃  point ┃    X    ┃    Y    ┃    X    ┃    Y    ┃');
     writeln('┣━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫');
-    writelnformat('┃   A    ┃ -07.000 ┃  20.000 ┃ {0: 00.000;-00.000} ┃ {1: 00.000;-00.000} ┃', 
+    writelnformat('┃   A    ┃ -27.000 ┃  24.500 ┃ {0: 00.000;-00.000} ┃ {1: 00.000;-00.000} ┃', 
         circleEllipseIntersectionX, circleEllipseIntersectionY);
     writeln('┣━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫');
-    writelnformat('┃   B    ┃  08.000 ┃ -35.000 ┃ {0: 00.000;-00.000} ┃ {1: 00.000;-00.000} ┃',
+    writelnformat('┃   B    ┃  21.000 ┃ -12.500 ┃ {0: 00.000;-00.000} ┃ {1: 00.000;-00.000} ┃',
         circleEllipseIntersectionX2, circleEllipseIntersectionY2);
     writeln('┣━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫');
-    writelnformat('┃   C    ┃  35.000 ┃ -10.000 ┃ {0: 00.000;-00.000} ┃ {1: 00.000;-00.000} ┃',
+    writelnformat('┃   C    ┃  28.000 ┃ -04.000 ┃ {0: 00.000;-00.000} ┃ {1: 00.000;-00.000} ┃',
         circleLineIntersectionX, circleLineIntersectionY);
     writeln('┗━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┛');
 end.
