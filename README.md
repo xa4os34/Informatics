@@ -1,2 +1,2 @@
 # Informatics
-This repo contains programming code and reports for PNRPU informatic labs that was gived me as hometask.
+This repo contains program code and reports for the PNIPU Informatics labs that was given to me as a homework assignment.
