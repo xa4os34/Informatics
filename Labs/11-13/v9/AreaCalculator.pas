@@ -11,7 +11,7 @@ const c = 10.7022693844773;
 const circleEllipseIntersectionX = -26.9174999998894;
 const circleEllipseIntersectionY = 24.4602607144866;
 const ellipseLineXIntersection = 20.938982242787;
-const formatA = ':0000.000';
+const formatA = ':000.0000';
 const formatB = ':000.0000';
 
 type CalculatingAreaFunction = function(
