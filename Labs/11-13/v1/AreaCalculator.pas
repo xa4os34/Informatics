@@ -59,12 +59,12 @@ function GetAArea(
 begin
     var aArea := GetAreaUnderCurve(
         x -> circleY - sqrt(r**2 - (x - circleX)**2),
-        CircleXProjection, CircleEllipseIntersectionX,
+        circleXProjection, circleEllipseIntersectionX,
         iterations);
 
     aArea += GetAreaUnderCurve(
         x -> k * x + c,
-        CircleEllipseIntersectionX, 0,
+        circleEllipseIntersectionX, 0,
         iterations);
 
     Result := aArea;
@@ -80,7 +80,7 @@ begin
         0, circleLineXIntersection,
         iterations);
 
-    bArea -= k * (ellipseLineXIntersection + circleLineXIntersection) / 2 + c;
+    bArea -= abs( k * (ellipseLineXIntersection + circleLineXIntersection) + c);
 
     bArea -= getAreaUnderCurve(
         x -> -(b * sqrt(a**2 - (x - ellipseX)**2) - a * ellipseY) / a, 
