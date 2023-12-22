@@ -23,8 +23,8 @@ begin
         var circleX := circleXProjection + r; 
         var circleY := circleYIntersection + GetSecondCoordinateOfCircle(-circleX, r); 
     
-        var ellipseX := ellipseXProjection + b; 
-        var ellipseY := ellipseYIntersectin + GetSecondCoordinateOfEllipse(-ellipseX, a, b); 
+        var ellipseX := ellipseXProjection + a; 
+        var ellipseY := ellipseYIntersectin + GetSecondCoordinateOfEllipse(-ellipseX, b, a); 
         println(circleX, circleY);
         println(ellipseX, ellipseY);
          

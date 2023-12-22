@@ -3,14 +3,14 @@ const a = 35.0;
 const b = 25.0;
 const circleX = 2;
 const circleY = -4.057;
-const ellipseX = -18;
-const ellipseY = -5.711;
+const ellipseX = -8;
+const ellipseY = -5;
 const circleXProjection = -33;
-const k = 0.831243320779365;
-const c = -13.36187068043;
-const circleEllipseIntersectionX = -20.776;
-const ellipseLineXIntersection = 16.075;
-const circleLineXIntersection = 32.290;
+const k = 0.5354;
+const c = -14.078991;
+const circleEllipseIntersectionX = -24.337;
+const ellipseLineXIntersection = 26.296;
+const circleLineXIntersection = 35.786;
 const formatA = ':000.0000';
 const formatB = ':000.0000';
 
@@ -86,7 +86,7 @@ begin
         iterations);
 
     bArea -= getAreaUnderCurve(
-        x -> -(b * sqrt(a**2 - (x - ellipseX)**2) - a * ellipseY) / a, 
+        x -> sqrt(b**2 - b**2 / a**2 * (x - ellipseX)**2) + ellipseY, 
         0, ellipseLineXIntersection, 
         iterations); 
 
